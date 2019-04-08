@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-import "./NewPost.css";
+import './NewPost.css';
 
 class NewPost extends Component {
   state = {
-    title: "",
-    content: "",
-    author: "AD"
+    title: '',
+    content: '',
+    author: 'AD'
   };
 
   componentDidMount() {
-    console.log("/new-post", this.props);
+    console.log('/new-post', this.props);
   }
 
   postDataHandler = () => {
@@ -20,24 +20,24 @@ class NewPost extends Component {
       body: this.state.content,
       author: this.state.author
     };
-    axios.post("/posts", data).then(response => {
+    axios.post('/posts', data).then(response => {
       console.log(response);
     });
   };
 
   render() {
     return (
-      <div className="NewPost">
+      <div className='NewPost'>
         <h1>Add a Post</h1>
         <label>Title</label>
         <input
-          type="text"
+          type='text'
           value={this.state.title}
           onChange={event => this.setState({ title: event.target.value })}
         />
         <label>Content</label>
         <textarea
-          rows="4"
+          rows='4'
           value={this.state.content}
           onChange={event => this.setState({ content: event.target.value })}
         />
@@ -46,8 +46,8 @@ class NewPost extends Component {
           value={this.state.author}
           onChange={event => this.setState({ author: event.target.value })}
         >
-          <option value="Max">Max</option>
-          <option value="Manu">Manu</option>
+          <option value='Max'>Max</option>
+          <option value='Manu'>Manu</option>
         </select>
         <button onClick={this.postDataHandler}>Add Post</button>
       </div>

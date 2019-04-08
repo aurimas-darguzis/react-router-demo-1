@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { BrowserRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import Blog from "./containers/Blog/Blog";
+import Blog from './containers/Blog/Blog';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className='App'>
           <Blog />
         </div>
       </BrowserRouter>
@@ -16,12 +16,3 @@ class App extends Component {
 }
 
 export default App;
-
-{
-  /* <section>
-          <FullPost id={this.state.selectedPostId} />
-        </section>
-        <section>
-          <NewPost />
-        </section> */
-}

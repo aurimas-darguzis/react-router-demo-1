@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import axios from "../../../axios";
-import Post from "../../../components/Post/Post";
-import "./Posts.css";
+import React, { Component } from 'react';
+import axios from '../../../axios';
+import Post from '../../../components/Post/Post';
+import './Posts.css';
 
 export default class Posts extends Component {
   state = {
@@ -9,15 +9,15 @@ export default class Posts extends Component {
   };
 
   componentDidMount() {
-    console.log("/posts", this.props);
+    console.log('/posts', this.props);
     axios
-      .get("/posts")
+      .get('/posts')
       .then(response => {
         const posts = response.data.slice(0, 4);
         const updatedPosts = posts.map(post => {
           return {
             ...post,
-            author: "Aurimas"
+            author: 'Aurimas'
           };
         });
         this.setState({ posts: updatedPosts });
@@ -48,6 +48,6 @@ export default class Posts extends Component {
       });
     }
 
-    return <section className="Posts">{posts}</section>;
+    return <section className='Posts'>{posts}</section>;
   }
 }
